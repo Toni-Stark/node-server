@@ -14,19 +14,7 @@ process.on('uncaughtException', (error) => {
   console.log('[GRAMMAR ERROR] -', error)
 });
 
-
-// loginRouter(router);
-
-router.route('/all').post((req, res)=>{
-    console.log(req.body)
-    const selectSql = 'SELECT * FROM websites';
-    mysql.connect(selectSql, {}, (err, result)=>{
-        if(err){
-            throw new Error(err);
-        };
-        res.send(result);
-    })
-});
+loginRouter(router);
 
 app.use(bodyParser.json())
 

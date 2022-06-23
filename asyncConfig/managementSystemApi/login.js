@@ -3,7 +3,7 @@ const mysql = require('../config');
 module.exports = (router) => {
     // get接口all
     router.route('/all').get((req, res)=>{
-        console.log(req._parsedUrl.search)
+        console.log(req.body)
         const selectSql = 'SELECT * FROM websites';
         mysql.connect(selectSql, {}, (err, result)=>{
             if(err){
@@ -14,7 +14,7 @@ module.exports = (router) => {
     })
     // post接口all
     router.route('/all').post((req, res)=>{
-        console.log(req.body, req.params)
+        console.log(req.body)
         const selectSql = 'SELECT * FROM websites';
         mysql.connect(selectSql, {}, (err, result)=>{
             if(err){

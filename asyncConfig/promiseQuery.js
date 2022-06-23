@@ -1,3 +1,5 @@
+const connection = require("mysql");
+
 module.exports = (sql, SqlParams) => {
     return new Promise((resolve, reject)=>{
         connection.query(sql, SqlParams, function(err, result) {
